@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    header.tech=gameUrl
+
+    div.container.tech
+      div.actions
+
+        input(name="musicVol" type="range" list="tickmarks" value="10" step="1" max="100" min="1" data-before="1")
+        input(name="timerVol" type="range" list="tickmarks" value="10" step="1" max="100" min="1" data-before="1")
+        div.js-active=`${users.length} joined`
+        button.js-logo.btn='Logo'
+        button.js-intro-music.btn(class={'is-paused': pauseIntroMusic})='Intro Music'
+        button.js-music.btn(class={'is-paused': pauseMusic})='Music Toggle'
+        button.js-showdown-music.btn(class={'is-paused': pauseShowdownMusic})='Showdown Music'
+        button.js-fx.btn(class={'is-paused': pauseSoundFX})='Sound FX Toggle'
+        button.js-clear.btn='Clear buzzes'
+
+        div.js-total-questions.total-questions Question
+            span=`${~~currentQuestion < 0 ? 0 : currentQuestion}`
+            =` / ${totalQuestions}`
+        input(name="curQ" type="number" value=`${~~currentQuestion < 0 ? 0 : currentQuestion}` min="1" max=totalQuestions required='required')
+        div='Q Time : '
+          span.timer-host 0
+        div.buzz-in
+            if buzzes[0]
+              =`Team: ${buzzes[0]}`
+
+
+        button.js-test-question.btn='Test Question'
+        button.pause.btn(class={'is-paused': pauseTime})='Pause Timer'
+        button.js-question.btn='Show Question'
+        button.js-reveal.btn='Reveal Answer'
+        button.js-score.btn='Score Board'
+
+      div.js-view-question.view-question Question
+      div.js-note.view-note Notes
+      div.js-answers
+        div.js-choices.host-choices
+        p
+          button.js-lock.host-lock Lock In
+
+    div.show-scores.js-show-scores.hidden
+        button.js-score-clear.btn.is-paused='Erase Scores'
+        button.js-score-close.btn='Close'
+        div.js-display-scores.display-scores
+
+    datalist(id="tickmarks")
+        - for (var x = 0; x <= 100; x=x+5)
+            option(value=x)
+
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/tech.js')
+
+

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    header.js-joined-info=""
+
+    div.container
+      form.js-join
+        h1 Choose Team 1-9
+        input(type='number' name='team' placeholder='Your team number 1-9' required='required' min="1" max="9" size="1")
+        button(type='submit')='Join!'
+
+      div.js-joined.hidden
+        button.js-buzzer.buzzer='Buzz'
+        div.js-question.view-question
+        div.js-answers.hidden
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/join.js')
+
+

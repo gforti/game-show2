@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/view.css')
+  body
+    div.js-info.info
+    div.paper
+      div.titleDiv
+        div.title Real or Fake News
+      hr.topHr
+      hr.bottomHr
+      div.aboutTitle
+        div.vol Vol# 2020
+        div.date=new Date().toDateString()
+        div.price 50&cent
+      hr.dateHr
+      div.js-card.card
+        div.front
+          div.titleDiv
+            div.title Next Article
+        div.js-back.back
+          div.content
+            div.item#item1
+              div.storytitle
+                h4.storyTitle1.en British Authorities Scramble To Find Stolen Solid Gold Toilet
+                h4.storyTitle1.es British Authorities Scramble To Find Stolen Solid Gold Toilet
+              div.storycontent
+                img.image.image1(src='stories/story1.jpg')
+                p.story.story1 The toilet — worth, by some estimates, up to $1.25 million — was connected to the plumbing in the Blenheim Palace.
+      hr.dateHr
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/view.js')
+

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    header.host Host View
+
+    div.container.host
+      div.actions-host
+        button.js-clear.btn='Clear buzzes'
+        button.js-question.btn='Show Question'
+        button.pause.btn(class={'is-paused': pauseTime})='Pause Timer'
+        button.js-reveal.btn='Reveal Answer'
+        div Question
+          span.current-question=`${~~currentQuestion < 0 ? 0 : currentQuestion}`
+          =` / ${totalQuestions}`
+        div='Q Time : '
+          span.timer-host 0
+        div.buzz-in
+            if buzzes[0]
+              =`Team: ${buzzes[0]}`
+        div.the-answer
+      div.js-question.view-question Question
+      div.js-note.notes Notes
+      div.js-answers
+        div.js-choices.host-choices
+        p
+          button.js-lock.host-lock Lock In
+
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/host.js')
+
+
