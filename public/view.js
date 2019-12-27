@@ -1,11 +1,11 @@
 const socket = io()
 
-const question = document.querySelector('.view-question')
-const answers = document.querySelector('.view-answers')
-const timer = document.querySelector('.timer')
+const question = document.querySelector('h4.storyTitle1.en')
+const questionES = document.querySelector('h4.storyTitle1.es')
+const img = document.querySelector('.image')
+const story = document.querySelector('.story')
+
 const info = document.querySelector('.js-info')
-const intro = document.querySelector('.js-intro')
-const container = document.querySelector('.js-container')
 const card = document.querySelector('.js-card')
 const cardBack = document.querySelector('.js-back')
 
@@ -42,7 +42,7 @@ showdownTrack.addEventListener('ended',()=>{
     showdownTrack.play()
 })
 let tracks = [];
-for (let i = 3; i <= 3; i++)
+for (let i = 4; i <= 4; i++)
 tracks.push(new Audio(`tracks/track${i}.mp3`))
 
 // tracks.sort(function() {return 0.5 - Math.random()})
@@ -100,7 +100,7 @@ socket.on('buzzes', (buzzes) => {
 socket.on('clear', () => {
     if (chosenAnswer === null) {
         const choice = document.querySelector('li.highlight')
-        info.classList.remove('info-display')
+        //info.classList.remove('info-display')
         if (choice) choice.classList.remove('highlight')
         showBuzzTeam = true
         info.innerHTML = ''
@@ -108,9 +108,10 @@ socket.on('clear', () => {
 })
 
 socket.on('intro', () => {
+    info.classList.remove('stamp', 'wrong', 'correct')
+    cardBack.classList.add('hide')
+    card.classList.remove('flipped')
     questionClose(false)
-    intro.classList.remove('hidden')
-    container.classList.add('hidden')
 
 })
 
@@ -134,26 +135,19 @@ function prepareQuestion(data) {
     introTrack.pause()
     pauseTimerMusic()
     showBuzzTeam = true
-    info.classList.remove('info-display')
-    info.classList.remove('wrong')
-    info.classList.remove('correct')
+    info.classList.remove('stamp', 'wrong', 'correct')
     cardBack.classList.add('hide')
-    intro.classList.add('hidden')
-    container.classList.remove('hidden')
-
-
     card.classList.remove('flipped')
 
     displayChoices(data)
     setTimer()
-    startTimerTimer = setTimeout(startTimer, 2500)
+    startTimerTimer = setTimeout(startTimer, 3000)
 
-    cardBackTimer = setTimeout(()=>{
-        cardBack.classList.remove('hide')
-    }, 1000)
+  
     cardTimer = setTimeout(()=>{
         card.classList.add('flipped')
-    }, 1500)
+        cardBack.classList.remove('hide')
+    }, 2000)
 }
 
 socket.on('answerSelected', (choice) => {
@@ -162,13 +156,7 @@ socket.on('answerSelected', (choice) => {
 })
 
 function highlightChoice(choice) {
-    const choices = document.querySelectorAll('li[data-choice]')
-    choices.forEach( (input) => {
-        input.classList.remove('highlight')
-        if ( input.dataset.choice === choice) {
-            input.classList.add('highlight')
-        }
-    })
+ 
 }
 
 socket.on('answerlock', (answerChosen) => {
@@ -240,9 +228,9 @@ socket.on('selectionToggle', (data) => {
 
 
 function displayChoices(data) {
-    console.log('what is going on?', data)
+    //console.log('what is going on?', data)
     info.innerHTML = ''
-    answers.innerHTML = ''
+    info.classList.remove('stamp')
     question.innerHTML = ''
     chosenAnswer = null
     if ( data.choices && data.choices.length ) {
@@ -250,30 +238,23 @@ function displayChoices(data) {
         timeLeft = data.time
         QuestionSeconds = data.time
         resetTimerMusic()
-        question.innerHTML = `${data.question} <div class="es"> ${data.questionES || ''}</div>`
+        question.innerHTML = data.question
+        img.src = data.img
+        story.innerHTML = data.note
+        questionES.innerHTML = data.questionES || ''
         words = data.question.split(" ")
         question.classList.remove('question-swoop')
+        questionES.classList.remove('question-swoop')
         question.classList.add('hide')
+        questionES.classList.add('hide')
 
-        let html = `<ul class="${data.lock ? 'hidden' : ''} ${data.choices.length === 3 ? 'three' : ''}">`;
-        data.choices.forEach( (answer, i) => {
-            const addTime = !!(answer.split(" ").length > 3)
-            const [answerTop = '', answerBottom = ''] = answer.split("/")
-            html += `
-              <li data-choice="${answer.trim()}" data-time="${addTime}" class="hidden">
-              <span>${answerTop.trim()}</span>
-              <span>${answerBottom.trim()}</span>
-              </li>`
-        })
-        html += '</ul>'
-        answers.innerHTML = html
+       
 
     }
 }
 
 function setTimer() {
     clearInterval(clockTimer)
-    timer.innerHTML = timeLeft
     pauseTime = false
     socket.emit('pauseTime', pauseTime)
 }
@@ -284,59 +265,12 @@ function startTimer() {
 
     question.classList.add('question-swoop')
     question.classList.remove('hide')
+    questionES.classList.add('question-swoop')
+    questionES.classList.remove('hide')
 
     let delay = Math.ceil(words.length/3) * 1000
     const DELAY_BY = 1500
     const DELAY_BY_EXTRA = 1000
-    const ul = answers.querySelector('ul')
-
-
-    if (!ul.classList.contains('hidden')) {
-        if (answers.querySelector('li:nth-child(1)')) {
-            delay += DELAY_BY
-            answer1Timer = setTimeout(()=>{
-                socket.emit('answerShown', 1)
-                const li = answers.querySelector('li:nth-child(1)')
-                if (li) li.classList.remove('hidden')
-            }, delay)
-            if ( answers.querySelector('li:nth-child(1)').dataset.time == "true") {
-                delay += DELAY_BY_EXTRA
-            }
-        }
-        if (answers.querySelector('li:nth-child(2)')) {
-            delay += DELAY_BY
-            answer2Timer = setTimeout(()=>{
-                socket.emit('answerShown', 2)
-                const li = answers.querySelector('li:nth-child(2)')
-                if (li) li.classList.remove('hidden')
-            }, delay)
-            if ( answers.querySelector('li:nth-child(2)').dataset.time == "true") {
-                delay += DELAY_BY_EXTRA
-            }
-        }
-        if (answers.querySelector('li:nth-child(3)')) {
-            delay += DELAY_BY
-            answer3Timer = setTimeout(()=>{
-                socket.emit('answerShown', 3)
-                const li = answers.querySelector('li:nth-child(3)')
-                if (li) li.classList.remove('hidden')
-            }, delay)
-            if ( answers.querySelector('li:nth-child(3)').dataset.time == "true") {
-                delay += DELAY_BY_EXTRA
-            }
-        }
-        if (answers.querySelector('li:nth-child(4)')) {
-            delay += DELAY_BY
-            answer4Timer = setTimeout(()=>{
-                socket.emit('answerShown', 4)
-                const li = answers.querySelector('li:nth-child(4)')
-                if (li) li.classList.remove('hidden')
-            }, delay)
-            if ( answers.querySelector('li:nth-child(4)').dataset.time == "true") {
-                delay += DELAY_BY_EXTRA
-            }
-        }
-    }
 
     delay += DELAY_BY
     questionReadyTimer = setTimeout(()=>{
@@ -355,7 +289,6 @@ function countdown() {
     if (!pauseTime) {
         playTimerMusic()
         timeLeft--
-        timer.innerHTML = timeLeft
     } else {
         pauseTimerMusic()
     }
@@ -367,29 +300,28 @@ function questionClose(show = true) {
     clearInterval(clockTimer)
     questionReady = false
     socket.emit('questionClose')
-    info.classList.add('info-display')
     if (show)
         showCorrectAnswerTimer = setTimeout(showCorrectAnswer, 3000)
 }
 
 function showCorrectAnswer() {
 
-    const choices = document.querySelectorAll('li[data-choice]')
-    choices.forEach( (input) => {
-        if ( input.dataset.choice.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
-            input.classList.add('correct')
-        }
-    })
+    info.innerHTML = correctAnswer
 
-    if ( correctAnswer.length &&  chosenAnswer !== null && chosenAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
-        info.innerHTML = `Correct`
+    if(correctAnswer.trim().toLowerCase() === 'real') {
         info.classList.add('correct')
+    } else {
+        info.classList.add('wrong')
+    }
+    
+    if ( correctAnswer.length &&  chosenAnswer !== null && chosenAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase()) {
+        
         if(!pauseSoundFX) s_correct.play()
     } else {
-        info.innerHTML = `Incorrect`
-        info.classList.add('wrong')
+        
         if(!pauseSoundFX) s_wrong.play()
     }
+    info.classList.add('stamp')
     socket.emit('unLockLogo')
 }
 
@@ -465,4 +397,3 @@ function setMusicVolume(musicVol) {
 
 
 // window.addEventListener('DOMContentLoaded', ()=>{introTrack.play()})
-

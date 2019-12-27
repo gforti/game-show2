@@ -13,5 +13,19 @@ module.exports = [
     lock: false
   }
   ,
+  {
+    img: 'stories/story2.jpg',
+    question: "Naughty this year? At Fort Lauderdale’s Florida Krampus Night, say hello to evil Santa Claus",
+    questionES: "",
+    choices: [
+      "Real",
+      "Fake"
+    ],
+    answer: "Real",
+    note: "costumed revelers will wander downtown Fort Lauderdale dressed as the Krampus, a horned Christmas demon from European folklore",
+    time: 10,
+    lock: false
+  }
+  ,
 ];
 

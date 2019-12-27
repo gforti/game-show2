@@ -208,28 +208,29 @@ function showScores() {
 
 
 function updateScoreBoard() {
-    let teamInfo = {'unanswerd': 0}
+    let teamInfo = {'general': [], 'unanswered': 0}
     let html = ''
     Object.values(score).forEach( (data) => {
 
         if (data.team.length && !teamInfo.hasOwnProperty(data.team)){
             teamInfo[data.team] = []
         }
-
-        if (teamInfo.hasOwnProperty(data.team))
+        teamInfo['general'].push({correct:data.correct})
+        if (teamInfo.hasOwnProperty(data.team)) {
             teamInfo[data.team].push({correct:data.correct})
-        else
-            teamInfo['unanswerd']++
+        } else {
+            teamInfo['unanswered']++
+        }
     })
 
-    Object.keys(teamInfo).filter( key => key!== 'unanswerd').forEach( (team) => {
+    Object.keys(teamInfo).filter( key => key!== 'unanswered').forEach( (team) => {
         const correct = teamInfo[team].filter(data => data.correct).length
         const incorrect = teamInfo[team].filter(data => !data.correct).length
         html += `<div><p>Team ${team}</p> <p>Correct: ${correct}</p><p>Incorrect: ${incorrect}</p></div>`
     })
 
-    const unanswerd = teamInfo['unanswerd']
-    html += `<div><p>Unanswerd: ${unanswerd}</p></div>`
+    const unanswered = teamInfo['unanswered']
+    html += `<div><p>Unanswered: ${unanswered}</p></div>`
     scoreDivDisplay.innerHTML = html
 }
 
