@@ -167,5 +167,33 @@ module.exports = [
     lock: false
   }
   ,
+  {
+    img: 'stories/story13.jpg',
+    question: "Atlanta Shutting Down After 2 Inches Of Snow",
+    questionES: "",
+    choices: [
+      "Real",
+      "Fake"
+    ],
+    answer: "Real",
+    note: "Thousands of students spent the night at school after a snowstorm closed roads and caused gridlock throughout Georgia.",
+    time: 10,
+    lock: false
+  }
+  ,
+  {
+    img: 'stories/story14.gif',
+    question: "A Man got a letter approving unemployment benefits for his Dog",
+    questionES: "",
+    choices: [
+      "Real",
+      "Fake"
+    ],
+    answer: "Real",
+    note: "A cool $360 a week in unemployment benefits.",
+    time: 10,
+    lock: false
+  }
+  ,
 ];
 
