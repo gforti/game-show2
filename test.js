@@ -1,28 +1,28 @@
 module.exports = [
   {
-    img: 'stories/story1.jpg',
-    question: "British Authorities Scramble To Find Stolen Solid Gold Toilet",
+    img: 'stories/story8-2.jpg',
+    question: "Trump is dropping out for 2020",
     questionES: "",
     choices: [
       "Real",
       "Fake"
     ],
-    answer: "Real",
-    note: "The toilet — worth, by some estimates, up to $1.25 million — was connected to the plumbing in the Blenheim Palace.",
+    answer: "Fake",
+    note: "This is Fake News",
     time: 10,
     lock: false
   }
   ,
   {
-    img: 'stories/story2.jpg',
-    question: "Naughty this year? At Fort Lauderdale’s Florida Krampus Night, say hello to evil Santa Claus",
+    img: 'stories/story-test.jpg',
+    question: "Trump supporters at a rally care",
     questionES: "",
     choices: [
       "Real",
       "Fake"
     ],
     answer: "Real",
-    note: "costumed revelers will wander downtown Fort Lauderdale dressed as the Krampus, a horned Christmas demon from European folklore",
+    note: "Real News",
     time: 10,
     lock: false
   }
