@@ -42,7 +42,7 @@ showdownTrack.addEventListener('ended',()=>{
     showdownTrack.play()
 })
 let tracks = [];
-for (let i = 4; i <= 4; i++)
+for (let i = 3; i <= 3; i++)
 tracks.push(new Audio(`tracks/track${i}.mp3`))
 
 // tracks.sort(function() {return 0.5 - Math.random()})
