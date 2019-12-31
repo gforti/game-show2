@@ -377,5 +377,19 @@ module.exports = [
     lock: false
   }
   ,
+  {
+    img: 'stories/story29.jpg',
+    question: "Couple flips coin at wedding to choose last name",
+    questionES: "",
+    choices: [
+      "Real",
+      "Fake"
+    ],
+    answer: "Real",
+    note: "Darcy Ward wins her wedding coin toss.",
+    time: 10,
+    lock: false
+  }
+  ,
 ];
 
