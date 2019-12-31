@@ -141,7 +141,7 @@ module.exports = [
   ,
   {
     img: 'stories/story12.jpg',
-    question: "Celebrity almost arrested breaking into his own home",
+    question: "Celebrity almost arrested breaking into his own home",
     questionES: "",
     choices: [
       "Real",
@@ -359,6 +359,20 @@ module.exports = [
     ],
     answer: "Real",
     note: "Canine joyride",
+    time: 10,
+    lock: false
+  }
+  ,
+  {
+    img: 'stories/story28.jpg',
+    question: "Squirrels stash more than 200 walnuts, grass under hood of woman's car",
+    questionES: "",
+    choices: [
+      "Real",
+      "Fake"
+    ],
+    answer: "Real",
+    note: "Absolutely nuts",
     time: 10,
     lock: false
   }
