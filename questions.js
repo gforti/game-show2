@@ -309,7 +309,7 @@ module.exports = [
   ,
   {
     img: 'stories/story23.png',
-    question: "Tom Cruise look-a-like running for president",
+    question: "Tom Cruise is running for President",
     questionES: "",
     choices: [
       "Real",
