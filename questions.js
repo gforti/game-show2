@@ -141,7 +141,7 @@ module.exports = [
   ,
   {
     img: 'stories/story12.jpg',
-    question: "Celebrity almost arrested breaking into his own home",
+    question: "Celebrity almost arrested breaking into his own home",
     questionES: "Celebridad casi arrestada irrumpiendo en su propia casa",
     choices: [
       "Real",
