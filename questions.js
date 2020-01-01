@@ -254,7 +254,7 @@ module.exports = [
   {
     img: 'stories/story20.jpg',
     question: "Early 19th century Witch hunting kit found in basement of Salem, MA home.",
-    questionES: "",
+    questionES: "Kit de caza de brujas de principios del siglo XIX encontrado en el sótano de Salem, MA.",
     choices: [
       "Real",
       "Fake"
@@ -268,7 +268,7 @@ module.exports = [
   {
     img: 'stories/story24.jpeg',
     question: "Man calls 911 with elaborate story of robbery to get out of work",
-    questionES: "",
+    questionES: "El hombre llama al 911 con una elaborada historia de robo para salir del trabajo",
     choices: [
       "Real",
       "Fake"
@@ -282,7 +282,7 @@ module.exports = [
   {
     img: 'stories/story21.jpg',
     question: "Couple Arrested For Selling Golden Tickets To Heaven",
-    questionES: "",
+    questionES: "Pareja arrestada por vender boletos de oro al cielo",
     choices: [
       "Real",
       "Fake"
@@ -296,7 +296,7 @@ module.exports = [
   {
     img: 'stories/story22.gif',
     question: "Pixar studios in early stages for a real-life Turbo movie",
-    questionES: "",
+    questionES: "Pixar Studios en las primeras etapas de una película Turbo de la vida real",
     choices: [
       "Real",
       "Fake"
@@ -310,7 +310,7 @@ module.exports = [
   {
     img: 'stories/story23.png',
     question: "Tom Cruise is running for President",
-    questionES: "",
+    questionES: "Tom Cruise se postula para presidente",
     choices: [
       "Real",
       "Fake"
@@ -324,7 +324,7 @@ module.exports = [
   {
     img: 'stories/story25.jpg',
     question: "This Banana Was Duct-Taped to a Wall. It Sold for $120,000.",
-    questionES: "",
+    questionES: "Este plátano fue pegado con cinta adhesiva a una pared. Se vendió por $ 120,000.",
     choices: [
       "Real",
       "Fake"
@@ -338,7 +338,7 @@ module.exports = [
   {
     img: 'stories/story26.jpg',
     question: "Mom gets revenge on porch pirates with smelly surprise instead of packages",
-    questionES: "",
+    questionES: "Mamá se venga de los piratas del porche con una desagradable sorpresa en lugar de paquetes",
     choices: [
       "Real",
       "Fake"
@@ -352,7 +352,7 @@ module.exports = [
   {
     img: 'stories/story27.jpg',
     question: "Dog puts car into reverse, drives in circles for nearly an hour",
-    questionES: "",
+    questionES: "El perro pone el auto en reversa, conduce en círculos durante casi una hora",
     choices: [
       "Real",
       "Fake"
@@ -366,7 +366,7 @@ module.exports = [
   {
     img: 'stories/story28.jpg',
     question: "Squirrels stash more than 200 walnuts, grass under hood of woman's car",
-    questionES: "",
+    questionES: "Las ardillas esconden más de 200 nueces, hierba bajo el capó del auto de una mujer",
     choices: [
       "Real",
       "Fake"
@@ -380,7 +380,7 @@ module.exports = [
   {
     img: 'stories/story29.jpg',
     question: "Couple flips coin at wedding to choose last name",
-    questionES: "",
+    questionES: "Pareja lanza una moneda en la boda para elegir el apellido",
     choices: [
       "Real",
       "Fake"
