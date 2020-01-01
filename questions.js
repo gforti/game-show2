@@ -2,7 +2,7 @@ module.exports = [
   {
     img: 'stories/story1.jpg',
     question: "British Authorities Scramble To Find Stolen Solid Gold Toilet",
-    questionES: "",
+    questionES: "Las autoridades británicas luchan por encontrar un inodoro de oro que fue robado",
     choices: [
       "Real",
       "Fake"
@@ -16,7 +16,7 @@ module.exports = [
   {
     img: 'stories/story3.jpg',
     question: "Villagers In Kenya Claim To Have Captured A Real-Life Pikachu.",
-    questionES: "",
+    questionES: "Toda una aldea en Kenia afirma haber capturado un Pikachu de la vida real",
     choices: [
       "Real",
       "Fake"
@@ -30,7 +30,7 @@ module.exports = [
   {
     img: 'stories/story4.gif',
     question: "The World’s Biggest Chicken Would Totally make a great pet.",
-    questionES: "",
+    questionES: "El pollo más grande del mundo sería una gran mascota.",
     choices: [
       "Real",
       "Fake"
@@ -44,7 +44,7 @@ module.exports = [
   {
     img: 'stories/story5.jpeg',
     question: "Dad's brilliant hack tricks toddler into thinking mom is in room",
-    questionES: "",
+    questionES: "Padre crea un truco brillante que engaña a su niño para que piense que mamá está en la habitación",
     choices: [
       "Real",
       "Fake"
@@ -58,7 +58,7 @@ module.exports = [
   {
     img: 'stories/story6.jpg',
     question: "Take your naughty kids to jail for a mugshot with Santa this December",
-    questionES: "",
+    questionES: "Este diciembre, lleve a sus hijos traviesos a la cárcel para una foto con Santa Claus detrás de las rejas.",
     choices: [
       "Real",
       "Fake"
@@ -72,7 +72,7 @@ module.exports = [
   {
     img: 'stories/story7.jpg',
     question: "'Drunk Santa' arrested after police found him in stuck in a chimney",
-    questionES: "",
+    questionES: "'Santa borracho' arrestado después de que la policía lo encontró atrapado en una chimenea",
     choices: [
       "Real",
       "Fake"
@@ -86,7 +86,7 @@ module.exports = [
   {
     img: 'stories/story8.jpg',
     question: "Trump appears to fart on live TV",
-    questionES: "",
+    questionES: "Trump parece tirarse un peo en la televisión en vivo",
     choices: [
       "Real",
       "Fake"
@@ -100,7 +100,7 @@ module.exports = [
   {
     img: 'stories/story9.png',
     question: "Ronald McDonald vs The Burger King Rap Battle for charity",
-    questionES: "",
+    questionES: "Ronald McDonald vs The Burger King Hacen batalla de “rap” para beneficio de un obra de caridad.",
     choices: [
       "Real",
       "Fake"
@@ -114,7 +114,7 @@ module.exports = [
   {
     img: 'stories/story10.jpg',
     question: "Chicken crosses B.C. road, waits for walk signal",
-    questionES: "",
+    questionES: "Pollo cruza B.C. camino, espera señal de caminar",
     choices: [
       "Real",
       "Fake"
@@ -128,7 +128,7 @@ module.exports = [
   {
     img: 'stories/story11.gif',
     question: "Ryan Griffin suspended for cheating - used stickum adhesive to catch ball.",
-    questionES: "",
+    questionES: "Ryan Griffin suspendido por hacer trampa: utiliza adhesivo stickum para atrapar la pelota.",
     choices: [
       "Real",
       "Fake"
@@ -142,7 +142,7 @@ module.exports = [
   {
     img: 'stories/story12.jpg',
     question: "Celebrity almost arrested breaking into his own home",
-    questionES: "",
+    questionES: "Celebridad casi arrestada irrumpiendo en su propia casa",
     choices: [
       "Real",
       "Fake"
@@ -156,7 +156,7 @@ module.exports = [
   {
     img: 'stories/story13.jpg',
     question: "Atlanta Shutting Down After 2 Inches Of Snow",
-    questionES: "",
+    questionES: "Atlanta cerrando después de 2 pulgadas de nieve",
     choices: [
       "Real",
       "Fake"
@@ -170,7 +170,7 @@ module.exports = [
   {
     img: 'stories/story14.gif',
     question: "A Man got a letter approving unemployment benefits for his Dog",
-    questionES: "",
+    questionES: "Un hombre recibió una carta aprobando los beneficios de desempleo para su perro",
     choices: [
       "Real",
       "Fake"
@@ -184,7 +184,7 @@ module.exports = [
   {
     img: 'stories/story15.jpg',
     question: "Study shows eating in silence will allow you to live longer",
-    questionES: "",
+    questionES: "Estudio muestra que comer en silencio te permitirá vivir más tiempo",
     choices: [
       "Real",
       "Fake"
@@ -198,7 +198,7 @@ module.exports = [
   {
     img: 'stories/story16.jpg',
     question: "Tom Hanks just found out he's related to Mister Rogers",
-    questionES: "",
+    questionES: "Tom Hanks acaba de descubrir que esta relacionado con el senor Rogers",
     choices: [
       "Real",
       "Fake"
@@ -212,7 +212,7 @@ module.exports = [
   {
     img: 'stories/story17.jpg',
     question: "Rainbow grasshopper discovered in Costa Rica",
-    questionES: "",
+    questionES: "Saltamontes arcoiris descubierto en Costa Rica",
     choices: [
       "Real",
       "Fake"
@@ -226,7 +226,7 @@ module.exports = [
   {
     img: 'stories/story18.jpg',
     question: "Petition for Billie Holiday to change name to Billie Christmas reaches over one million signatures.",
-    questionES: "",
+    questionES: "La peticion para que Billie Holiday cambie su nombre a Billie Christmas alcanza de un million de firmas",
     choices: [
       "Real",
       "Fake"
@@ -240,7 +240,7 @@ module.exports = [
   {
     img: 'stories/story19.jpg',
     question: "Zebra born with Menorah Stripes?",
-    questionES: "",
+    questionES: "Zebra nace con el diseno del candelabro de los judios",
     choices: [
       "Real",
       "Fake"
