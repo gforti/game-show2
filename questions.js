@@ -147,7 +147,7 @@ module.exports = [
       "Real",
       "Fake"
     ],
-    answer: "Fake",
+    answer: "Real",
     note: "William H. Macy has been pictured scaling a fence to his own home",
     time: 10,
     lock: false
